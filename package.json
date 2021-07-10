@@ -1,0 +1,50 @@
+{
+    "name": "debug-source-map",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "dist/debug-source-map.esm.js",
+    "iife": "dist/debug-source-map.js",
+    "module": "dist/debug-source-map.esm.js",
+    "browser": "dist/debug-source-map.umd.js",
+    "commonjs": "dist/debug-source-map.cjs.js",
+    "bin": {
+        "debug-source-map": "dist/debug-source-map.esm.js"
+    },
+    "filename": "debug-source-map.js",
+    "dependencies": {
+        "source-map": "^0.7.3"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^11.0.1",
+        "@rollup/plugin-node-resolve": "^7.0.0",
+        "rollup": "^1.29.0",
+        "rollup-plugin-terser": "^7.0.2"
+    },
+    "scripts": {
+        "build": "rollup -c",
+        "dev": "rollup -c -w",
+        "test": "node test/test.js",
+        "pretest": "npm run build"
+    },
+    "files": [
+        "dist"
+    ],
+    "author": "chenhu.pei",
+    "keywords": [
+        "debug-source-map",
+        "chenhu.pei"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pch1024/debug-source-map.git"
+    },
+    "homepage": "https://github.com/pch1024/debug-source-map#readme",
+    "maintainers": [
+        {
+            "name": "chenhu.pei",
+            "web": "www.peichenhu.cn",
+            "mail": "pch1024@outlook.com"
+        }
+    ],
+    "license": "MIT"
+}
