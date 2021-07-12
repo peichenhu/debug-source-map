@@ -1,4 +1,6 @@
-# debug-sm
+# debug-source-map
+
+`Node` 环境的工具，使用`行列信息`定位查找 SourceMap 中的资源信息。
 
 ## 帮助文档
 
@@ -8,25 +10,20 @@
 参数 2 Column            : SourceJS  要查找的的列
 ```
 
-快速使用
+快速或者全局使用
 
 ```bash
-npx source-map debug-sm ./test.js.map 1 1000
+# 全局安装
+npm i debug-source-map -g
+# 全局安装后使用
+debug-source-map ./test.js.map 1 1000
+debug-source-map http://s1.hdslb.com/bfs/cm/cm-sdk/static/js/pc.js.map 1 1000
+debug-source-map https://s1.hdslb.com/bfs/cm/cm-sdk/static/js/pc.js.map 1 1000
 
-npx source-map debug-sm http://s1.hdslb.com/bfs/cm/cm-sdk/static/js/pc.js.map 1 1000
-
-npx source-map debug-sm https://s1.hdslb.com/bfs/cm/cm-sdk/static/js/pc.js.map 1 1000
-```
-
-开发使用
-
-```bash
-# 本机文件
-node debug.js ./pc.js.map 1 1000
-# 远程 HTTP 文件
-node debug.js http://s1.hdslb.com/bfs/cm/cm-sdk/static/js/pc.js.map 1 1000
-# 远程 HTTPS 文件
-node debug.js https://s1.hdslb.com/bfs/cm/cm-sdk/static/js/pc.js.map 1 1000
+# 快速使用
+npx debug-source-map ./test.js.map 1 1000
+npx debug-source-map http://s1.hdslb.com/bfs/cm/cm-sdk/static/js/pc.js.map 1 1000
+npx debug-source-map https://s1.hdslb.com/bfs/cm/cm-sdk/static/js/pc.js.map 1 1000
 ```
 
 ## License

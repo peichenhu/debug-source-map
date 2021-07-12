@@ -3,9 +3,12 @@ import path from "path";
 import http from "http";
 import https from "https";
 import { isURL, isURLHTTPS, isBrowser } from "./utils.js";
+import { ifCallback } from './interface';
 
-export default function loadSourceMapRaw(sourceMapFilePath, callback) {
-    let sourceMapRaw = "";
+
+// 加载文件
+function loadSourceMapRaw(sourceMapFilePath: string, callback: ifCallback) {
+    let sourceMapRaw: string = "";
     if (!isURL.test(sourceMapFilePath)) {
         // 读取本机 SourceMap 文件
         try {
@@ -13,7 +16,7 @@ export default function loadSourceMapRaw(sourceMapFilePath, callback) {
             sourceMapRaw = fs.readFileSync(path.resolve(sourceMapFilePath), "utf8");
             callback(sourceMapRaw);
         } catch (e) {
-            console.error(`读取本机 SourceMap 文件失败，原因: ${e.message}`);
+            console.error(`读取本机 SourceMap 文件[${sourceMapFilePath}]失败，原因: ${e.message}`);
         }
     } else {
         // 下载远程 SourceMap 文件
@@ -33,3 +36,5 @@ export default function loadSourceMapRaw(sourceMapFilePath, callback) {
         });
     }
 }
+// 导出模块
+export default loadSourceMapRaw;

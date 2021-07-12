@@ -24,9 +24,10 @@ const BgMagenta = "\x1b[45m";
 const BgCyan = "\x1b[46m";
 const BgWhite = "\x1b[47m";
 
-export function success(...args) {
+exports.success = function success(...args) {
     console.log(`${FgGreen} ✓ ${FgGreen} ${Reset}`, ...args);
-}
-export function failure(...args) {
+};
+
+exports.failure = function failure(...args) {
     console.log(`${FgRed} x ${FgRed} ${Reset}`, ...args);
-}
+};
